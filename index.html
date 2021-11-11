@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Text</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Arizonia&display=swap');
+
+      @import url('https://fonts.googleapis.com/css?family=Lovers+Quarrel&display=swap');
+
+      @import url('https://fonts.googleapis.com/css?family=Parisienne&display=swap');
+
+      .header {
+        width: 100%;
+        max-width: 650px;
+        position: fixed;
+        left: 5%;
+        top: 5%;
+      }
+
+      .header text {
+        color: black;
+        stroke-width: 3px;
+        stroke-dashoffset: -800;
+        stroke-dasharray: 800;
+      }
+
+      .header text.is-active {
+        animation-name: text;
+        animation-duration: 7s;
+        animation-iteration-count: 1;
+        animation-direction: forwards;
+        animation-fill-mode: forwards;
+      }
+
+      .paragraph1 {
+        position: fixed;
+        width: 1500px;
+        height: auto;
+        left: 7%;
+        top: 25%;
+      }
+
+      .paragraph1 text {
+        color: #f3f3f3;
+        stroke-width: 1px;
+        stroke-dashoffset: -800;
+        stroke-dasharray: 800;
+      }
+
+      .paragraph1 text.is-active {
+        animation-name: text;
+        animation-delay: 3s;
+        animation-duration: 7s;
+        animation-iteration-count: 1;
+        animation-direction: forwards;
+        animation-fill-mode: forwards;
+      }
+
+      .paragraph2 {
+        position: fixed;
+        width: 1500px;
+        height: auto;
+        left: 12%;
+        top: 35%;
+        overflow-wrap: normal;
+      }
+
+      .paragraph2 text {
+        color: #f3f3f3;
+        stroke-width: 3px;
+        stroke-dashoffset: -800;
+        stroke-dasharray: 800;
+      }
+
+      .paragraph2 text.is-active {
+        animation-name: text;
+        animation-delay: 7s;
+        animation-duration: 7s;
+        animation-iteration-count: 1;
+        animation-direction: forwards;
+        animation-fill-mode: forwards;
+      }
+
+      .footer {
+        width: 100%;
+        max-width: 750px;
+        position: fixed;
+        right: 5%;
+        bottom: 15%;
+      }
+
+      .footer text {
+        color: #f3f3f3;
+        stroke-width: 3px;
+        stroke-dashoffset: -800;
+        stroke-dasharray: 800;
+      }
+
+      .footer text.is-active {
+        animation-name: text;
+        animation-delay: 11s;
+        animation-duration: 7s;
+        animation-iteration-count: 1;
+        animation-direction: forwards;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes text {
+        50% {
+          fill: transparent;
+        }
+
+        75% {
+          fill: transparent;
+          stroke-dashoffset: 0;
+          stroke-width: 3px;
+        }
+
+        100% {
+          stroke-dashoffset: 0;
+          fill: rgb(0, 0, 0);
+          stroke-width: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg class="header">
+      <text
+        id="header"
+        fill="none"
+        stroke="black"
+        transform="translate(0 80)"
+        stroke-width="1"
+        font-size="100"
+        font-family="Lovers Quarrel, cursive"
+        font-weight="400"
+        letter-spacing="0.1em"
+        class="is-active"
+      >
+        <tspan>This animated text...</tspan>
+      </text>
+    </svg>
+    <svg class="paragraph1">
+      <text
+        fill="none"
+        stroke="black"
+        transform="translate(0 80)"
+        stroke-width="0"
+        font-size="50"
+        font-family="Arizonia, cursive"
+        font-weight="400"
+        letter-spacing="0.1em"
+        class="is-active"
+      >
+        <tspan>Is all contained within this one file...</tspan>
+      </text>
+    </svg>
+    <svg class="paragraph2">
+      <text
+        fill="none"
+        stroke="black"
+        transform="translate(0 80)"
+        stroke-width="0"
+        font-size="50"
+        font-family="Arizonia, cursive"
+        font-weight="400"
+        letter-spacing="0.1em"
+        class="is-active"
+      >
+        <tspan>Easily chached to provide a dash of speed...</tspan>
+      </text>
+    </svg>
+    <svg class="footer">
+      <text
+        fill="none"
+        stroke="black"
+        transform="translate(10 80)"
+        stroke-width="0"
+        font-size="60"
+        font-family="Parisienne, cursive"
+        font-weight="400"
+        letter-spacing="0.1em"
+        class="is-active"
+      >
+        <tspan>Its as easy as this.</tspan>
+      </text>
+    </svg>
+  </body>
+</html>
